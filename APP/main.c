@@ -1,27 +1,26 @@
-/*
-* APPLICATION LAYER
+#include "EXT_INT0.h"
+#include "LED.h"
+#include "Switch.h"
 
-
-*/
-#include "../HAL/LED/LED_interface.h"
-#include "../MCAL/GPIO/GPIO_interface.h"
-
-void delay(void)
-{
-    unsigned int i;
-    for(i = 0; i < 50000; i++);
+void App_ButtonPressLogic(void) {
+    Delay_ms(30); 
+    
+    if (PORTB.F0 == 0) { 
+        LED_Toggle();
+    }
 }
 
-void main()
-{
-    LED_Init(GPIO_PORTB, GPIO_PIN0);
-
-    while(1)
-    {
-        LED_On(GPIO_PORTB, GPIO_PIN0);
-        delay();
-
-        LED_Off(GPIO_PORTB, GPIO_PIN0);
-        delay();
+void main() {
+    LED_Init();
+    SWITCH_Init(0); 
+    EXT_INT0_Init();
+    
+    EXT_INT0_SetEdge(INT0_FALLING_EDGE); 
+    
+    EXT_INT0_SetCallback(App_ButtonPressLogic);
+    
+    EXT_INT0_Enable();
+    
+    while(1) {
     }
 }
