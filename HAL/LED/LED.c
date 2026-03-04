@@ -11,7 +11,6 @@ void LED_On(uint8 pin) {
     if (pin == 1) { RD1_bit = 1; }
     if (pin == 2) { RD2_bit = 1; }
 }
-
 void LED_Off(uint8 pin) {
     if (pin == 0) { RD0_bit = 0; }
     if (pin == 1) { RD1_bit = 0; }
