@@ -4,9 +4,9 @@
 #include "../../SERVICES/Std_TYPES.h"
 
 /* Registers - using MikroC built-in names */
-#define TMR0_REG          TMR0
-#define OPTION_REG_CUSTOM OPTION_REG
-#define INTCON_REG        INTCON
+#define TMR0_REG          (*(volatile unsigned char*)0x01)
+#define OPTION_REG_CUSTOM (*(volatile unsigned char*)0x81)
+#define INTCON_REG        (*(volatile unsigned char*)0x0B)
 
 /* Interrupt Bits */
 #define T0IF_BIT 2

@@ -19,4 +19,8 @@ typedef long double f128;
 /* Standard Values */
 #define NULL_PTR   ((void*)0)
 
+/* Delay Functions Prototypes */
+void Delay_ms(u32 ms);
+void Delay_us(u32 us);
+
 #endif

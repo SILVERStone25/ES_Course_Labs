@@ -4,19 +4,19 @@
 #include "../../SERVICES/Std_Types.h"
 
 /* Timer2 and CCP Registers - using MikroC built-in names */
-#define T2CON           T2CON
-#define TMR2            TMR2
-#define PR2             PR2
+#define T2CON           (*(volatile unsigned char*)0x12)
+#define TMR2            (*(volatile unsigned char*)0x11)
+#define PR2             (*(volatile unsigned char*)0x92)
 
-#define CCPR1L          CCPR1L
-#define CCPR1H          CCPR1H
-#define CCP1CON         CCP1CON
+#define CCPR1L          (*(volatile unsigned char*)0x15)
+#define CCPR1H          (*(volatile unsigned char*)0x16)
+#define CCP1CON         (*(volatile unsigned char*)0x17)
 
-#define CCPR2L          CCPR2L
-#define CCPR2H          CCPR2H
-#define CCP2CON         CCP2CON
+#define CCPR2L          (*(volatile unsigned char*)0x1B)
+#define CCPR2H          (*(volatile unsigned char*)0x1C)
+#define CCP2CON         (*(volatile unsigned char*)0x1D)
 
-#define TRISC           TRISC
+#define TRISC           (*(volatile unsigned char*)0x87)
 
 /* Timer2 Control Bits */
 #define T2CKPS0         0   // Prescaler bits

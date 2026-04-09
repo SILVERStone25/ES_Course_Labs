@@ -5,6 +5,6 @@ void SWITCH_Init(u8 port ,u8 pin) {
 
 }
 
-uint8 SWITCH_Read(u8 port, u8 pin) {
+u8 SWITCH_Read(u8 port, u8 pin) {
     return GPIO_GetPinValue(port, pin);
 }

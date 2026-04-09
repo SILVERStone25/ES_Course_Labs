@@ -7,7 +7,7 @@
 void EXT_INT0_Init(void);
 void EXT_INT0_Enable(void);
 void EXT_INT0_Disable(void);
-void EXT_INT0_SetEdge(uint8 edge_type);
+void EXT_INT0_SetEdge(u8 edge_type);
 void EXT_INT0_SetCallback(void (*ptr)(void));
 void EXT_INT0_ISR_Handler(void);
 #endif

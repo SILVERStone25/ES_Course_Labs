@@ -5,6 +5,8 @@
 
 static void (*INT0_Callback)(void) = 0;
 
+void EXT_INT0_SetEdge(u8 edge_type);
+
 void EXT_INT0_Init(void) {
     GPIO_SetPinDirection(GPIO_PORTB, GPIO_PIN0, GPIO_INPUT); 
     CLR_BIT(INTCON_REG, INTF_BIT);                           
@@ -28,7 +30,7 @@ void EXT_INT0_Disable(void) {
     CLR_BIT(INTCON_REG, INTE_BIT); 
 }
 
-void EXT_INT0_SetEdge(uint8 edge_type) {
+void EXT_INT0_SetEdge(u8 edge_type) {
     if (edge_type == INT0_RISING_EDGE) SET_BIT(OPTION_REG_CUSTOM, INTEDG_BIT);
     else CLR_BIT(OPTION_REG_CUSTOM, INTEDG_BIT);
 }
